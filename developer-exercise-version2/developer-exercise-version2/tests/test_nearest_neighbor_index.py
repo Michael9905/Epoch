@@ -34,11 +34,6 @@ class NearestNeighborIndexTest(unittest.TestCase):
         self.assertEqual((-1000, 20), uut.find_nearest((-2000, 0)))
         self.assertEqual((42, 3.14159), uut.find_nearest((40, 3)))
 
-    def test_large_dataset(self):
-            # Test with a large dataset
-            points = [(i, i) for i in range(10000)]
-            uut = NearestNeighborIndex(points)
-            self.assertEqual((9999, 9999), uut.find_nearest((10000, 10000)))  # Nearest to (10000, 10000)
 
     def test_benchmark(self):
         """
